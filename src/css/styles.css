@@ -5,21 +5,134 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
-
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+body {
+  background-color: #1a1a1a;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 270px;
+  height: 40px;
+  border-radius: 4px;
+  background: #fff;
+  padding: 0 16px;
+  margin-right: 8px;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+}
+input:hover {
+  color: #2e2f42;
+}
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+button:hover {
+  background: #6c8cff;
+}
+.load-more {
+  display: none;
+  margin: 0 auto;
+  width: 120px;
+  margin-top: 32px;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.loader {
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: none;
+  position: fixed;
+  top: 15%;
+  bottom: 85%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #195e96 100%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.gallery-item {
+  background-color: #fff;
+}
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 360px;
+  height: 200px;
+}
+.info {
+  display: flex;
+  gap: 28px;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+.info-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
 }
